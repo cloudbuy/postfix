@@ -34,6 +34,7 @@
 
 #include <dict_proxy.h>
 #include <dict_ldap.h>
+#include <dict_mongodb.h>
 #include <dict_mysql.h>
 #include <dict_pgsql.h>
 #include <dict_sqlite.h>
@@ -49,6 +50,9 @@ static const DICT_OPEN_INFO dict_open_info[] = {
     DICT_TYPE_PROXY, dict_proxy_open,
 #ifdef HAS_LDAP
     DICT_TYPE_LDAP, dict_ldap_open,
+#endif
+#ifdef HAS_MONGODB
+    DICT_TYPE_MONGODB, dict_mongodb_open,
 #endif
 #ifdef HAS_MYSQL
     DICT_TYPE_MYSQL, dict_mysql_open,
